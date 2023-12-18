@@ -1,0 +1,10 @@
+@import url('../../app.css');
+
+.nav-item:not(.dropdown, .active, .button):hover{
+    background-color:var(--orange-2);
+}
+
+.active{
+    border-radius: 0 !important;
+    border-bottom: 1.5px solid white;
+}

@@ -1,0 +1,170 @@
+/* -------------------------- FONTS -------------------------- */
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+/* -------------------------- VARS -------------------------- */
+:root {
+    /* Light Theme Colors */
+    --light-1: #ffffff;
+    --light-2: #f0f0f0;
+    --light-3: #e2e2e2;
+
+    /* Dark Theme Colors */
+    --dark-1: #131211;
+    --dark-2: #1d1c1a;
+    --dark-3: #363330;
+
+    /* Accent Colors */
+    --orange-1: #ff9f1a;
+    --orange-2: #ca7f16;
+    --orange-3: #985f0f;
+    --blue-1: #005cb2;
+    --blue-2: #01488b;
+    --purple-1: #6C4079;
+    --purple-2: #53325e;
+
+    /* Fonts */
+    --font-1: 'Roboto Condensed', sans-serif;
+    --font-2: 'Open Sans', sans-serif;
+    --font-3: 'Montserrat', sans-serif;
+    --font-h1: 'Barlow Condensed', sans-serif;
+    --font-h2: 'Lato', sans-serif;
+
+    /* Light Theme */
+    --background-color: var(--light-1);
+    --text-color: #444;
+    --text-color-variant-1: #555;
+    --bg-variant-1: var(--light-2);
+    --bg-variant-2: var(--light-3);
+}
+
+/* -------------------------- LIGHT THEME -------------------------- */
+body {
+    background-color: var(--background-color) !important;
+    color: var(--text-color) !important;
+}
+
+.bg-variant-1 {
+    background-color: var(--bg-variant-1);
+}
+
+.bg-variant-2 {
+    background-color: var(--bg-variant-2);
+}
+
+/* -------------------------- DARK THEME -------------------------- */
+body.dark-theme {
+    --background-color: var(--dark-1);
+    --text-color: #fff;
+    --text-color-variant-1: #9b9b9b;
+    --bg-variant-1: var(--dark-2);
+    --bg-variant-2: var(--dark-3);
+}
+
+/* -------------------------- GENERAL CONFIGS -------------------------- */
+* {
+    box-sizing: border-box !important;
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+p,
+span, 
+body {
+    font-family: var(--font-1) !important;
+}
+
+h1 {
+    font-family: var(--font-h1) !important;
+}
+
+a {
+    font-family: var(--font-3) !important;
+}
+
+h4 {
+    font-family: var(--font-h2);
+}
+
+img {
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+.btn-blue,
+.btn-blue:hover,
+.btn-orange,
+.btn-orange:hover,
+.bg-dark-2,
+.bg-dark-3,
+.btn-purple,
+.bg-dark-1 {
+    color: white;
+}
+
+.painel:hover {
+    font-weight: bold;
+    background-color: white !important;
+    color: var(--orange-1) !important;
+}
+
+.footer-li {
+    list-style-type: none;
+}
+
+.footer-a {
+    text-decoration: none;
+    color: white;
+}
+
+/* -------------------------- BUTTONS -------------------------- */
+.btn {
+    font-family: var(--font-3) !important;
+}
+
+.btn-purple {
+    background-color: var(--purple-1) !important;
+    border-color: var(--purple-1) !important;
+}
+
+.btn-purple:hover {
+    background-color: var(--purple-2) !important;
+    border-color: var(--purple-2) !important;
+}
+
+.btn-blue {
+    background-color: var(--blue-1) !important;
+    border-color: var(--blue-1) !important;
+}
+
+.btn-blue:hover {
+    background-color: var(--blue-2) !important;
+    border-color: var(--blue-2) !important;
+}
+
+.btn-orange {
+    background-color: var(--orange-1) !important;
+    border-color: var(--orange-1) !important;
+}
+
+.btn-orange:hover {
+    background-color: var(--orange-2) !important;
+    border-color: var(--orange-2) !important;
+}
+
+/* -------------------------- BACKGROUNDS -------------------------- */
+.bg-blue-1 {
+    background-color: var(--blue-1);
+}
+
+.bg-blue-2 {
+    background-color: var(--blue-2);
+}
+
+.bg-orange {
+    background-color: var(--orange-1);
+}
