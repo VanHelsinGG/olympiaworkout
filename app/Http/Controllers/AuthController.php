@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
-use App\Models\UserPermission;
+use App\Models\UsersPermissions;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -52,14 +52,14 @@ class AuthController extends Controller
             'password' => Hash::make($request->password),
         ]);
 
-        UserPermission::create([
+        UsersPermissions::create([
            'user' => $user->id ,
            'general_group' => 'u',
-           'specific_permissions' => null,
+           'specific_permissions' => "",
         ]);
 
         return redirect()->route('auth.login')
-        ->with('success', __('auth.register_success'))
+        ->with('success', __('user/auth.register_success'))
         ->with('registered_email', $request->input('email'));
     }
 
@@ -80,13 +80,13 @@ class AuthController extends Controller
         }
 
         throw ValidationException::withMessages([
-            'email' => [__('auth.failed')],
+            'email' => [__('user/auth.failed')],
         ]);
     }
 
     public function logout(){
         Auth::logout();
 
-        return route('home');
+        return redirect()->route('home');
     }
 }

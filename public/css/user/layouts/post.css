@@ -1,0 +1,25 @@
+@import url("../../app.css");
+
+.post{
+    position:relative;
+}
+
+.action-btn-group{
+    position: absolute;
+    right: 2rem;
+    bottom: -1rem;
+}
+
+.bi-three-dots-vertical{
+    color: var(--text-color) !important;
+}
+
+@keyframes react-anim{
+    from{
+        font-size: 0.6em;
+    }
+    to{
+        font-size: 1em;
+    }
+}
+

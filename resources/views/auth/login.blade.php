@@ -5,7 +5,7 @@
 @section('head')
 
 <link rel="stylesheet" href="{{ asset('css/auth/login.css') }}">
-<script src="{{ asset('js/auth/login.js') }}"></script>
+<script src="{{ asset('js/auth/login.js') }}" defer></script>
 
 @endsection
 
@@ -13,7 +13,7 @@
     <div class="container-fluid fs-md-5 h-100">
         <div class="row h-100">
             <div
-                class="col-md-6 col-12 d-flex align-items-md-center align-items-start justify-content-center">
+                class="col-md-6 col-12 d-flex align-items-md-center align-items-start justify-content-center bg-variant-2">
                 <form action="{{ url('/auth/login') }}" method="post" class="my-md-0 my-5 p-4">
                     @csrf
                     <div class="row">

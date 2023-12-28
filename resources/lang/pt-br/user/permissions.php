@@ -5,10 +5,10 @@ return [
         'u' => 'Usuário',
         'a' => 'Administrador',
         'm' => 'Moderador',
-        'p' => 'Professor',
+        't' => 'Professor',
     ],
     'specific_permissions' => [
         'p' =>'Realizar Postagens',
         'mp' => 'Moderar Postagens',
-    ]
+    ],
 ];

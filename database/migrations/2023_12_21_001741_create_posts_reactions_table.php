@@ -11,12 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('users_permissions', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+        Schema::create('posts_reactions', function (Blueprint $table) {
+            $table->foreignId('post')->constrained('posts')->primary();
             $table->foreignId('user')->constrained('users');
-            $table->char('general_group');
-            $table->string('specific_permissions');
+            $table->char('reaction_type',1);
+            $table->timestamps();
         });
     }
 
@@ -25,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        //
+        Schema::dropIfExists('posts_reactions');
     }
 };

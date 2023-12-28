@@ -4,6 +4,7 @@ use App\Models\User;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\PostController;
 use App\Http\Controllers\UserController;
 
 /*
@@ -30,6 +31,7 @@ Route::prefix('/auth')->group(function () {
         Route::get('/forgot-password', [AuthController::class, 'showForgotPasswordForm'])->name('forgot-password');
         Route::post('/forgot-password', [AuthController::class, 'sendPasswordResetLink']);
     });
+    
     Route::post('/logout', [AuthController::class, 'logout'])->name('auth.logout');
 });
 
@@ -37,18 +39,14 @@ Route::prefix('/auth')->group(function () {
 Route::middleware(['auth'])->group(function () {
     Route::prefix('/user')->group(function () {
         Route::get('/main', [UserController::class, 'showMainPage'])->name('user.main');
+        
+        Route::prefix('/post')->group(function (){
+            Route::post('/', [PostController::class, 'create'])->name('user.post.create');
+            Route::post('/{post}/react/{type}', [PostController::class, 'react'])->name('user.post.react');
+            Route::delete('/{post}', [PostController::class, 'delete']);
+            Route::patch('/{post}', [PostController::class, 'update']);
+            Route::post('/{post}/report', [PostController::class, 'report']);
+        });
     });
 });
 
-// Debug Routes
-Route::prefix('/debug')->group(function () {
-    Route::get('/user', function () {
-        $users = User::all();
-        return $users;
-    });
-    Route::get('/tables', function () {
-        $tables = DB::select('SHOW TABLES');
-
-        return collect($tables)->flatten();
-    });
-});

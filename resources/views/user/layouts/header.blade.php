@@ -1,4 +1,4 @@
-    <nav class="navbar navbar-expand-lg bg-orange shadow-sm">
+    <nav class="navbar navbar-expand-lg bg-orange-1 shadow-sm">
         <div class="container-fluid mx-3">
             <h1 class="navbar-brand text-white">OlympiaWorkout</h1>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
@@ -21,7 +21,7 @@
                     @if($user->permissions->isTeacher())
                     <li class="nav-item button px-2">
                         <a href="" class="btn btn-outline-light">Painel do
-                            {{ __('permissions.general_groups.'.$user->group()) }}</a>
+                            {{ __('user/permissions.general_groups.'.$user->group()) }}</a>
                     </li>
                     @endif
                     <li class="nav-item dropdown px-2">

@@ -1,6 +1,6 @@
 $(document).ready(function (){
-    if(window.innerWidth <= 770){
-        $('form').addClass('bg-dark-2 rounded-3 shadow');
+    if($('body').hasClass('dark-theme')){
+        $('.bg-variant-2').removeClass('bg-variant-2');
     }
 
     $('.togglePassword').click(function () {

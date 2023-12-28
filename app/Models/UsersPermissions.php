@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class UserPermission extends Model
+class UsersPermissions extends Model
 {
     use HasFactory;
 
@@ -15,7 +15,10 @@ class UserPermission extends Model
         'specific_permissions',
     ];
 
-    public function isAdmin(){
+    protected $primaryKey = 'user';
+
+    public function isAdmin()
+    {
         return $this->general_group === 'a';
     }
 
@@ -28,4 +31,10 @@ class UserPermission extends Model
     {
         return in_array($this->general_group, ['m', 'a', 't']);
     }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+    
 }

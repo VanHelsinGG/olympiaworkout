@@ -5,7 +5,7 @@
 @section('head')
 
 <link rel="stylesheet" href="{{ asset('css/auth/register.css') }}">
-<script src="{{ asset('js/auth/register.js') }}"></script>
+<script src="{{ asset('js/auth/register.js') }}" defer></script>
 
 @endsection
 
@@ -45,7 +45,7 @@
             </div>
             <!-- Formulario -->
             <div
-                class="col-md-6 col-12 d-flex align-items-md-center align-items-start justify-content-center">
+                class="col-md-6 col-12 d-flex align-items-md-center align-items-start justify-content-center bg-variant-2">
                 <form action="{{ url('auth/register') }}" method="post" class="my-md-0 my-3 p-4">
                     @csrf
                     <div class="row">
